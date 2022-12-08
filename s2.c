@@ -5,7 +5,7 @@
 #include "s2.h"
 
 int s2(char* a) {
-    if (a[0] == '-') {
+    if (a[0] == '-' && a[1] == '1') {
         for (int i = 1; i < strlen(a); i++) {
             if (a[i] != '0' && a[i] != '1') {
                 return 0;
@@ -14,12 +14,14 @@ int s2(char* a) {
          return -1;
     }
     else {
-        for (int i = 0; i < strlen(a); i++) {
-            if (a[i] != '0' && a[i] != '1') {
-                return 0;
+        if (a[0] == '1') {
+            for (int i = 0; i < strlen(a); i++) {
+                if (a[i] != '0' && a[i] != '1') {
+                    return 0;
+                }
             }
+            return 1;
         }
-        return 1;
     }
     return 0;
 }

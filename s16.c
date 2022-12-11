@@ -120,6 +120,13 @@ char* s10_16(int a) {
         free(a16_copy);
         return a16_rev;
     }
+    else if (a == 0) {
+        a16_copy[strlen(a16_copy)] = '0';
+        a16_copy = realloc(a16_copy, sizeof(a16_copy)+2*sizeof(char));
+        a16_copy[strlen(a16_copy)] = 'x';
+        a16_copy[strlen(a16_copy)] = '0';
+        return a16_copy;
+    }
     else {
         a16_copy[strlen(a16_copy)] = 'x';
         a16_copy = realloc(a16_copy, sizeof(a16_copy)+sizeof(char));

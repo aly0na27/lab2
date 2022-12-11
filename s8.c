@@ -63,6 +63,12 @@ char* s10_8(int a) {
         free(a8_copy);
         return a8_rev;
     }
+    else if (a == 0) {
+        a8_copy[strlen(a8_copy)] = '0';
+        a8_copy = realloc(a8_copy, sizeof(a8_copy)+sizeof(char));
+        a8_copy[strlen(a8_copy)] = '0';
+        return a8_copy;
+    }
     else {
         a8_copy[strlen(a8_copy)] = '0';
         char* a8_rev = calloc(sizeof(char), strlen(a8_copy)); 

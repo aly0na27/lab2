@@ -43,6 +43,9 @@ int s2_10(char* a) {
 char* s10_2(int a) {
     char* a2_copy = calloc(sizeof(char), 1);
     int abs_a = abs(a);
+    if (a == 0) {
+        a2_copy[strlen(a2_copy)] = '0';
+    }
     while (abs_a > 0) {
         int p = abs_a % 2;
         if (p == 1) {

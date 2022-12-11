@@ -122,7 +122,7 @@ void s_calculator(char* str) {
             printf("%s (%d)\n", s, res);
             free(s);
         }
-        else if (s16(num1) == 0 && s16(num2) == 0) {
+        else if (s16(num1) == 1 && s16(num2) == 1) {
             int int_num1 = s16_10(num1);
             int int_num2 = s16_10(num2);
             int res = bin_operation(c, int_num1, int_num2);

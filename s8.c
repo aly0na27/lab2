@@ -33,13 +33,15 @@ int s8_10(char* a) {
     int res = 0;
     if (a[0] == '-') {
         for (int i = 2; i < strlen(a); i++) {
-            res += ((int)a[i]-48) * pow(8, strlen(a)-i-1);
+            res <<= 3;
+            res += ((int)a[i]-48);
         }
         res *= (-1);
     }
     else {
         for (int i = 1; i < strlen(a); i++) {
-            res += ((int)a[i]-48) * pow(8, strlen(a)-i-1);
+            res <<= 3;
+            res += ((int)a[i]-48);
         }
     }
     return res;

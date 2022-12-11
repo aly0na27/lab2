@@ -25,7 +25,7 @@ int s2(char* a) {
     }
     return 0;
 }
-int s2_10(char* a) {
+/*int s2_10(char* a) {
     int res = 0;
     if (a[0] != '-') {
         for (int i = 0; i < strlen(a); i++) {
@@ -35,6 +35,23 @@ int s2_10(char* a) {
     else {
         for (int i = 1; i < strlen(a); i++) {
             res += ((int)a[i] - 48) * pow(2, strlen(a)-i-1);
+        }
+        res *= (-1);
+    }
+    return res;
+}*/
+int s2_10(char* a) {
+    int res = 0;
+    if (a[0] != '-') {
+        for (int i = 0; i < strlen(a); i++) {
+            res <<= 1;
+            res += ((int)a[i]-48);
+        }
+    }
+    else {
+        for (int i = 1; i < strlen(a); i++) {
+            res <<= 1;
+            res += ((int)a[i]-48);
         }
         res *= (-1);
     }

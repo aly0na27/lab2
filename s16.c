@@ -28,25 +28,32 @@ int s16_10(char* a) {
     if (a[0] == '-') {
         for (int i = 3; i < strlen(a); i++) {
             if ((int)a[i] >= 48 && (int)a[i] <= 57) {
-                res += ((int)a[i] - 48) * pow(16, strlen(a)-i-1);
+                res <<= 4;
+                res += (int)a[i] - 48;
             }
             else if (a[i] == 'a') {
-                res += 10 * pow(16, strlen(a)-i-1);
+                res <<= 4;
+                res += 10;
             }
             else if (a[i] == 'b') {
-                res += 11 * pow(16, strlen(a)-i-1);
+                res <<= 4;
+                res += 11;
             }
             else if (a[i] == 'c') {
-                res += 12 * pow(16, strlen(a)-i-1);
+                res <<= 4;
+                res += 12;
             }
             else if (a[i] == 'd') {
-                res += 13 * pow(16, strlen(a)-i-1);
+                res <<= 4;
+                res += 13;
             }
             else if (a[i] == 'e') {
-                res += 14 * pow(16, strlen(a)-i-1);
+                res <<= 4;
+                res += 14;
             }
             else if (a[i] == 'f') {
-                res += 15 * pow(16, strlen(a)-i-1);
+                res <<= 4;
+                res += 15;
             }
         }
         res *= (-1);
@@ -54,25 +61,32 @@ int s16_10(char* a) {
     else {
         for (int i = 2; i < strlen(a); i++) {
             if ((int)a[i] >= 48 && (int)a[i] <= 57) {
-                res += ((int)a[i] - 48) * pow(16, strlen(a)-i-1);
+                res <<= 4;
+                res += (int)a[i] - 48;
             }
             else if (a[i] == 'a') {
-                res += 10 * pow(16, strlen(a)-i-1);
+                res <<= 4;
+                res += 10;
             }
             else if (a[i] == 'b') {
-                res += 11 * pow(16, strlen(a)-i-1);
+                res <<= 4;
+                res += 11;
             }
             else if (a[i] == 'c') {
-                res += 12 * pow(16, strlen(a)-i-1);
+                res <<= 4;
+                res += 12;
             }
             else if (a[i] == 'd') {
-                res += 13 * pow(16, strlen(a)-i-1);
+                res <<= 4;
+                res += 13;
             }
             else if (a[i] == 'e') {
-                res += 14 * pow(16, strlen(a)-i-1);
+                res <<= 4;
+                res += 14;
             }
             else if (a[i] == 'f') {
-                res += 15 * pow(16, strlen(a)-i-1);
+                res <<= 4;
+                res += 15;
             }
         }
     }

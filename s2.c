@@ -14,6 +14,9 @@ int s2(char* a) {
          return -1;
     }
     else {
+        if (a[0] == '0' && strlen(a) == 1) {
+            return 1;
+        }
         if (a[0] == '1') {
             for (int i = 0; i < strlen(a); i++) {
                 if (a[i] != '0' && a[i] != '1') {
